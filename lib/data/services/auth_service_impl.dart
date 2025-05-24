@@ -8,15 +8,14 @@ class AuthServiceImpl extends AuthService {
 
   @override
   Future<AuthModel> login({required String email, required String password}) async {
-    final body = {
+    final queryParams = {
       'email': email,
       'passWord': password,
     };
 
-    Uri uri = Uri.https(baseUrl, '/login');
+    Uri uri = Uri.https(baseUrl, '/login', queryParams);
     final response = await dioClient.getUri(
       uri,
-      data: body,
     );
 
     return AuthModel.fromJson({'token': 'd1okpokopdo13kdo31d0ooakdopaksopkd1k3pkfok1kfsafko3fk'});
