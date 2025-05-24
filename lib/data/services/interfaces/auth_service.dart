@@ -8,6 +8,6 @@ abstract class AuthService {
 
   Future<AuthModel> login({
     required String email,
-    required String passWord,
+    required String password,
   });
 }

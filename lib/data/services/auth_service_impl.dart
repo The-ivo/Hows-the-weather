@@ -7,10 +7,10 @@ class AuthServiceImpl extends AuthService {
   final baseUrl = 'test.com';
 
   @override
-  Future<AuthModel> login({required String email, required String passWord}) async {
+  Future<AuthModel> login({required String email, required String password}) async {
     final body = {
       'email': email,
-      'passWord': passWord,
+      'passWord': password,
     };
 
     Uri uri = Uri.https(baseUrl, '/login');
