@@ -14,6 +14,7 @@ final GetIt getIt = GetIt.instance;
 
 void setupDependencies() {
   registerHttpClient();
+  registerSharedPreferences();
   registerServicesDependencies();
   registerRepositoriesDependencies();
 }
