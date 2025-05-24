@@ -19,3 +19,7 @@ abstract class Failure extends Equatable {
 class ServerFailure extends Failure {
   const ServerFailure({super.code, super.message});
 }
+
+class LocalFailure extends Failure {
+  const LocalFailure({super.code, super.message});
+}
