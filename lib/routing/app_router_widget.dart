@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hows_the_weather/UI/auth/blocs/auth_bloc/auth_bloc.dart';
 import 'package:hows_the_weather/UI/auth/widgets/auth_screen.dart';
 
 class AppRouterWidget extends StatefulWidget {
@@ -21,7 +23,10 @@ class _AppRouterWidgetState extends State<AppRouterWidget> {
         switch (routeName) {
           case '/':
             return MaterialPageRoute(
-              builder: (context) => AuthScreen(),
+              builder: (context) => BlocProvider(
+                create: (context) => AuthBloc(),
+                child: AuthScreen(),
+              ),
             );
 
           default:
