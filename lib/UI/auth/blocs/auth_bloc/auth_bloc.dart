@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:hows_the_weather/config/di/setup_di.dart';
 import 'package:hows_the_weather/data/repositories/interfaces/auth_repository.dart';
+import 'package:hows_the_weather/data/repositories/interfaces/local_repository.dart';
 import 'package:hows_the_weather/utils/enum.dart';
 
 part 'auth_event.dart';
@@ -15,6 +16,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
 
   final authRepository = getIt<AuthRepository>();
+  final localRepository = getIt<LocalRepository>();
 
   FutureOr<void> _doLogin(DoLogin event, emit) async {
     emit(state.copyWith(status: RequestStatus.loading));
@@ -35,6 +37,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             token: r.token,
           ),
         );
+        localRepository.saveUserToken(token: r.token!);
       },
     );
   }
