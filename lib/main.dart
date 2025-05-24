@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:hows_the_weather/config/di/setup_di.dart';
 import 'package:hows_the_weather/routing/app_router_widget.dart';
 
 void main() {
+  setupDependencies();
   runApp(const MyApp());
 }
 
