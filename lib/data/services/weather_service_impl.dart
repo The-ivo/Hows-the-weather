@@ -5,9 +5,10 @@ import 'package:hows_the_weather/data/services/interfaces/weather_service.dart';
 import 'package:hows_the_weather/domain/models/coordinates_model.dart';
 
 class WeatherServiceImpl extends WeatherService {
-  WeatherServiceImpl({required super.dioClient});
+  const WeatherServiceImpl({required super.dioClient});
 
-  final String baseUrl = String.fromEnvironment('openWeatherBaseUrl');
+  final String baseUrl = const String.fromEnvironment('openWeatherBaseUrl');
+  final String openWeatherApiKey = const String.fromEnvironment('openWeatherApiKey');
 
   @override
   Future<WeatherModel> getWeatherByCurrentLocation(CoordinatesModel coordinates) async {
@@ -15,7 +16,7 @@ class WeatherServiceImpl extends WeatherService {
       final queryParams = {
         'lat': coordinates.lat,
         'lon': coordinates.lon,
-        'appid': String.fromEnvironment('openWeatherApiKey'),
+        'appid': openWeatherApiKey,
       };
 
       Uri uri = Uri.https(baseUrl, '/data/2.5/weather', queryParams);
