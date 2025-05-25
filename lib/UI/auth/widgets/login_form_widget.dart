@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hows_the_weather/UI/auth/blocs/auth_bloc/auth_bloc.dart';
 import 'package:hows_the_weather/UI/weather/widgets/weather_screen.dart';
-import 'package:hows_the_weather/utils/enum.dart';
+import 'package:hows_the_weather/utils/enums.dart';
 
 class LoginFormWidget extends StatefulWidget {
   const LoginFormWidget({super.key});

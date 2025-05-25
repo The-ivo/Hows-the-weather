@@ -6,7 +6,7 @@ import 'package:hows_the_weather/config/di/setup_di.dart';
 import 'package:hows_the_weather/data/model/weather/weather_model.dart';
 import 'package:hows_the_weather/data/repositories/interfaces/weather_repository.dart';
 import 'package:hows_the_weather/domain/models/coordinates_model.dart';
-import 'package:hows_the_weather/utils/enum.dart';
+import 'package:hows_the_weather/utils/enums.dart';
 
 part 'get_weather_event.dart';
 part 'get_weather_state.dart';
