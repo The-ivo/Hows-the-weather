@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hows_the_weather/UI/auth/blocs/auth_bloc/auth_bloc.dart';
 import 'package:hows_the_weather/UI/auth/widgets/auth_screen.dart';
+import 'package:hows_the_weather/UI/weather/widgets/weather_screen.dart';
 
 class AppRouterWidget extends StatefulWidget {
   const AppRouterWidget({super.key});
@@ -27,6 +28,11 @@ class _AppRouterWidgetState extends State<AppRouterWidget> {
                 create: (context) => AuthBloc(),
                 child: AuthScreen(),
               ),
+            );
+
+          case WeatherScreen.mainRoute:
+            return MaterialPageRoute(
+              builder: (context) => WeatherScreen(),
             );
 
           default:
