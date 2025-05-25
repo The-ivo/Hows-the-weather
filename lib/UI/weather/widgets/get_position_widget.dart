@@ -5,9 +5,7 @@ import 'package:hows_the_weather/UI/weather/blocs/get_position_bloc/get_position
 import 'package:hows_the_weather/utils/enums.dart';
 
 class GetPositionWidget extends StatelessWidget {
-  const GetPositionWidget({super.key, required this.weather});
-
-  final Widget weather;
+  const GetPositionWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +38,6 @@ class GetPositionWidget extends StatelessWidget {
               ),
             ),
           );
-        } else if (getPositionState.status == GetCurrentPositionStatus.success) {
-          return weather;
         }
         return Center(
           child: Padding(
