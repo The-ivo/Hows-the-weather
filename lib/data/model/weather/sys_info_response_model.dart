@@ -4,7 +4,7 @@ part 'sys_info_response_model.g.dart';
 
 @JsonSerializable()
 class SysInfoResponseModel {
-  SysInfoResponseModel({
+  const SysInfoResponseModel({
     required this.type,
     required this.id,
     required this.country,

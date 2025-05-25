@@ -11,22 +11,7 @@ part 'weather_model.g.dart';
 
 @JsonSerializable()
 class WeatherModel {
-  final CoordinatesResponseModel coord;
-  final List<WeatherResponseModel> weather;
-  final String base;
-  final MainInfoResponseModel main;
-  final int visibility;
-  final WindResponseModel wind;
-  final RainResponseModel? rain;
-  final CloudsResponseModel clouds;
-  final int dt;
-  final SysInfoResponseModel sys;
-  final int timezone;
-  final int id;
-  final String name;
-  final int cod;
-
-  WeatherModel({
+  const WeatherModel({
     required this.coord,
     required this.weather,
     required this.base,
@@ -42,6 +27,21 @@ class WeatherModel {
     required this.name,
     required this.cod,
   });
+
+  final CoordinatesResponseModel coord;
+  final List<WeatherResponseModel> weather;
+  final String base;
+  final MainInfoResponseModel main;
+  final int visibility;
+  final WindResponseModel wind;
+  final RainResponseModel? rain;
+  final CloudsResponseModel clouds;
+  final int dt;
+  final SysInfoResponseModel sys;
+  final int timezone;
+  final int id;
+  final String name;
+  final int cod;
 
   factory WeatherModel.fromJson(Map<String, dynamic> json) => _$WeatherModelFromJson(json);
 

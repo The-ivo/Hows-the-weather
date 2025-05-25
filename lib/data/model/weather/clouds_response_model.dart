@@ -4,7 +4,9 @@ part 'clouds_response_model.g.dart';
 
 @JsonSerializable()
 class CloudsResponseModel {
-  CloudsResponseModel({required this.all});
+  const CloudsResponseModel({
+    required this.all,
+  });
 
   final int all;
 

@@ -4,10 +4,12 @@ part 'rain_response_model.g.dart';
 
 @JsonSerializable()
 class RainResponseModel {
+  const RainResponseModel({
+    required this.oneHour,
+  });
+
   @JsonKey(name: '1h')
   final double oneHour;
-
-  RainResponseModel({required this.oneHour});
 
   factory RainResponseModel.fromJson(Map<String, dynamic> json) => _$RainResponseModelFromJson(json);
 

@@ -4,15 +4,15 @@ part 'wind_response_model.g.dart';
 
 @JsonSerializable()
 class WindResponseModel {
-  final double speed;
-  final int deg;
-  final double? gust;
-
-  WindResponseModel({
+  const WindResponseModel({
     required this.speed,
     required this.deg,
     this.gust,
   });
+
+  final double speed;
+  final int deg;
+  final double? gust;
 
   factory WindResponseModel.fromJson(Map<String, dynamic> json) => _$WindResponseModelFromJson(json);
 
