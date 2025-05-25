@@ -30,6 +30,16 @@ class AppTextStyles {
     fontSize: 30,
   );
 
+  static const displayXsm = TextStyle(
+    fontFamily: _primaryFontFamily,
+    fontSize: 24,
+  );
+
+  static const display2xsm = TextStyle(
+    fontFamily: _primaryFontFamily,
+    fontSize: 18,
+  );
+
   static const displayButton = TextStyle(
     fontFamily: _primaryFontFamily,
     fontSize: 24,

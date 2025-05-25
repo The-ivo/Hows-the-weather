@@ -8,6 +8,8 @@ class WeatherAppTypo extends ThemeExtension<WeatherAppTypo> {
     this.displayLg = AppTextStyles.displayLg,
     this.displayMd = AppTextStyles.displayMd,
     this.displaySm = AppTextStyles.displaySm,
+    this.displayXsm = AppTextStyles.displayXsm,
+    this.display2xsm = AppTextStyles.display2xsm,
     this.displayButton = AppTextStyles.displayButton,
   });
 
@@ -16,6 +18,8 @@ class WeatherAppTypo extends ThemeExtension<WeatherAppTypo> {
   final TextStyle? displayLg;
   final TextStyle? displayMd;
   final TextStyle? displaySm;
+  final TextStyle? displayXsm;
+  final TextStyle? display2xsm;
   final TextStyle? displayButton;
 
   @override
@@ -25,6 +29,8 @@ class WeatherAppTypo extends ThemeExtension<WeatherAppTypo> {
     TextStyle? displayLG,
     TextStyle? displayMD,
     TextStyle? displaySM,
+    TextStyle? displayXSM,
+    TextStyle? display2XSM,
     TextStyle? displayButton,
   }) {
     return WeatherAppTypo(
@@ -33,6 +39,8 @@ class WeatherAppTypo extends ThemeExtension<WeatherAppTypo> {
       displayLg: displayLG ?? displayLg,
       displayMd: displayMD ?? displayMd,
       displaySm: displaySM ?? displaySm,
+      displayXsm: displayXSM ?? displayXsm,
+      display2xsm: display2XSM ?? display2xsm,
       displayButton: displayButton ?? displayButton,
     );
   }
@@ -52,6 +60,8 @@ class WeatherAppTypo extends ThemeExtension<WeatherAppTypo> {
       displayLg: TextStyle.lerp(displayLg, other.displayLg, t),
       displayMd: TextStyle.lerp(displayMd, other.displayMd, t),
       displaySm: TextStyle.lerp(displaySm, other.displaySm, t),
+      displayXsm: TextStyle.lerp(displayXsm, other.displayXsm, t),
+      display2xsm: TextStyle.lerp(display2xsm, other.display2xsm, t),
       displayButton: TextStyle.lerp(displayButton, other.displayButton, t),
     );
   }
