@@ -17,6 +17,7 @@ class WeatherServiceImpl extends WeatherService {
         'lat': coordinates.lat,
         'lon': coordinates.lon,
         'appid': openWeatherApiKey,
+        'units': 'imperial',
       };
 
       Uri uri = Uri.https(baseUrl, '/data/2.5/weather', queryParams);
