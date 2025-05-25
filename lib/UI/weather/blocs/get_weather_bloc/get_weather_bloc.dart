@@ -23,8 +23,8 @@ class GetWeatherBloc extends Bloc<GetWeatherEvent, GetWeatherState> {
 
     final response = await weatherRepository.getWeatherByCurrentLocation(
       coordinates: CoordinatesModel(
-        lat: event.lat,
-        lon: event.lon,
+        lat: event.lat.toString(),
+        lon: event.lon.toString(),
       ),
     );
 
