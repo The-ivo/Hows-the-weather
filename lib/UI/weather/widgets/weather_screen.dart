@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hows_the_weather/UI/core/theme/typography/typography.dart';
 import 'package:hows_the_weather/UI/weather/blocs/get_position_bloc/get_position_bloc.dart';
 import 'package:hows_the_weather/UI/weather/blocs/get_weather_bloc/get_weather_bloc.dart';
 import 'package:hows_the_weather/UI/weather/widgets/get_position_widget.dart';
+import 'package:hows_the_weather/UI/weather/widgets/large_screen_weather_widget.dart';
 import 'package:hows_the_weather/UI/weather/widgets/small_screen_weather_widget.dart';
 import 'package:hows_the_weather/utils/enums.dart';
 
@@ -30,12 +32,36 @@ class WeatherScreen extends StatelessWidget {
                     );
               }
             },
-            child: BlocBuilder<GetWeatherBloc, GetWeatherState>(
-              builder: (context, getWeatherState) {
+            child: BlocBuilder<GetPositionBloc, GetPositionState>(
+              builder: (context, getPositionState) {
+                if (getPositionState.status == GetCurrentPositionStatus.success) {
+                  return BlocBuilder<GetWeatherBloc, GetWeatherState>(builder: (context, getWeatherState) {
+                    if (getWeatherState.status == RequestStatus.success) {
+                      return isLargeScreen ? LargeScreenWeatherWidget() : SmallScreenWeatherWidget();
+                    }
+                    return Center(
+                      child: Padding(
+                        padding: EdgeInsets.all(35),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Getting weather for your current position',
+                              style: WeatherAppTypo.of(context)?.displayLg?.copyWith(
+                                    color: Colors.white,
+                                  ),
+                              textAlign: TextAlign.center,
+                            ),
+                            SizedBox(height: 32),
+                            CircularProgressIndicator(),
+                          ],
+                        ),
+                      ),
+                    );
+                  });
+                }
                 return SafeArea(
-                  child: GetPositionWidget(
-                    weather: SmallScreenWeatherWidget(),
-                  ),
+                  child: GetPositionWidget(),
                 );
               },
             ),
