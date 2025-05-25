@@ -5,9 +5,10 @@ import 'package:equatable/equatable.dart';
 import 'package:hows_the_weather/config/di/setup_di.dart';
 import 'package:hows_the_weather/data/repositories/interfaces/auth_repository.dart';
 import 'package:hows_the_weather/data/repositories/interfaces/local_repository.dart';
-import 'package:hows_the_weather/utils/enum.dart';
+import 'package:hows_the_weather/utils/enums.dart';
 
 part 'auth_event.dart';
+
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
