@@ -2,17 +2,17 @@ part of 'get_position_bloc.dart';
 
 class GetPositionState extends Equatable {
   const GetPositionState({
-    this.status = GetCurrentLocationStatus.inital,
+    this.status = GetCurrentPositionStatus.inital,
     this.position,
     this.error,
   });
 
-  final GetCurrentLocationStatus status;
+  final GetCurrentPositionStatus status;
   final Position? position;
   final String? error;
 
   GetPositionState copyWith({
-    GetCurrentLocationStatus? status,
+    GetCurrentPositionStatus? status,
     Position? position,
     String? error,
   }) {

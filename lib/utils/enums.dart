@@ -5,7 +5,7 @@ enum RequestStatus {
   success,
 }
 
-enum GetCurrentLocationStatus {
+enum GetCurrentPositionStatus {
   inital,
   failure,
   loading,

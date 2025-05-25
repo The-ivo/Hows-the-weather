@@ -14,25 +14,25 @@ class GetPositionBloc extends Bloc<GetPositionEvent, GetPositionState> {
 
   FutureOr<void> _onCurrentPositionRequested(CurrentPositionRequested event, emit) async {
     try {
-      emit(state.copyWith(status: GetCurrentLocationStatus.loading));
+      emit(state.copyWith(status: GetCurrentPositionStatus.loading));
       final position = await Geolocator.getCurrentPosition();
       emit(
         state.copyWith(
-          status: GetCurrentLocationStatus.success,
+          status: GetCurrentPositionStatus.success,
           position: position,
         ),
       );
     } on PermissionDeniedException catch (e) {
       emit(
         state.copyWith(
-          status: GetCurrentLocationStatus.failure,
+          status: GetCurrentPositionStatus.failure,
           error: 'User denied request for current position',
         ),
       );
     } catch (e) {
       emit(
         state.copyWith(
-          status: GetCurrentLocationStatus.failure,
+          status: GetCurrentPositionStatus.failure,
           error: 'Unable to access your location. Please check your browser settings and allow location access.',
         ),
       );
