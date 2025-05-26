@@ -13,10 +13,10 @@ class AuthServiceImpl extends AuthService {
       'passWord': password,
     };
 
-    Uri uri = Uri.https(baseUrl, '/login', queryParams);
-    final response = await dioClient.getUri(
-      uri,
-    );
+    // Uri uri = Uri.https(baseUrl, '/login', queryParams);
+    // final response = await dioClient.getUri(
+    //   uri,
+    // );
 
     return AuthModel.fromJson({'token': 'd1okpokopdo13kdo31d0ooakdopaksopkd1k3pkfok1kfsafko3fk'});
   }

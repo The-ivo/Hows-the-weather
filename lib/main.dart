@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hows_the_weather/UI/core/theme/typography/typography.dart';
 import 'package:hows_the_weather/config/di/setup_di.dart';
 import 'package:hows_the_weather/routing/app_router_widget.dart';
 
@@ -18,6 +19,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        extensions: [
+          WeatherAppTypo(),
+        ],
       ),
       home: const AppRouterWidget(),
     );

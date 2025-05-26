@@ -18,11 +18,15 @@ dependencies:
   dartz: ^0.10.1
   get_it: ^8.0.3
   shared_preferences: ^2.5.3
+  json_annotation: ^4.9.0
+  geolocator: ^13.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  json_serializable: ^6.9.0
+  build_runner: ^2.4.15
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -45,3 +49,20 @@ flutter:
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
 
+  assets:
+    - assets/
+    - assets/images/
+
+  fonts:
+    - family: SpaceGrotesk
+      fonts:
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Light.ttf
+          weight: 300
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/space_grotesk/SpaceGrotesk-Bold.ttf
+          weight: 700
