@@ -38,7 +38,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             token: r.token,
           ),
         );
-        localRepository.saveUserToken(token: r.token!);
+        if (r.token != null) {
+          localRepository.saveUserToken(token: r.token!);
+        }
       },
     );
   }
