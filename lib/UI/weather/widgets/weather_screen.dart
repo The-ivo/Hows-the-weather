@@ -38,7 +38,27 @@ class WeatherScreen extends StatelessWidget {
                   return BlocBuilder<GetWeatherBloc, GetWeatherState>(builder: (context, getWeatherState) {
                     if (getWeatherState.status == RequestStatus.success) {
                       return isLargeScreen ? LargeScreenWeatherWidget() : SmallScreenWeatherWidget();
+                    } else if (getWeatherState.status == RequestStatus.failure) {
+                      return Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(35),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset('assets/images/11d@2x.png'),
+                              Text(
+                                'Something went wrong, please try again later',
+                                style: WeatherAppTypo.of(context)?.displayMd?.copyWith(
+                                      color: Colors.white,
+                                    ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
                     }
+
                     return Center(
                       child: Padding(
                         padding: EdgeInsets.all(35),
