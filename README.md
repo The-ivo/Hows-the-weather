@@ -11,7 +11,7 @@ This app was developed to fulfill the coding assignment requirements for a posit
 
 - User authentication
 - Current weather data visualization 
-- 
+  
 ## Technologies Used
 
 - **Flutter Web** - Main framework
@@ -47,6 +47,7 @@ flutter run -d chrome
 flutter test
 
 ## Project Structure
+```bash
 lib
 ├─┬─ ui
 │ ├─┬─ core
@@ -73,3 +74,5 @@ lib
 test
 ├─── data
 └── ui
+```
+
