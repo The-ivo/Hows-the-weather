@@ -24,7 +24,7 @@ class _AppRouterWidgetState extends State<AppRouterWidget> {
         final routeName = settings.name;
 
         switch (routeName) {
-          case 'asd':
+          case '/':
             return MaterialPageRoute(
               builder: (context) => BlocProvider(
                 create: (context) => AuthBloc(),
@@ -32,7 +32,7 @@ class _AppRouterWidgetState extends State<AppRouterWidget> {
               ),
             );
 
-          case '/':
+          case WeatherScreen.mainRoute:
             return MaterialPageRoute(
               builder: (context) => MultiBlocProvider(
                 providers: [
