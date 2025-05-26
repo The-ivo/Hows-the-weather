@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hows_the_weather/UI/core/theme/typography/typography.dart';
@@ -14,6 +12,9 @@ class LargeScreenWeatherWidget extends StatelessWidget {
     final pageData = [
       InfoContainer(
         title: 'Temperature details',
+        asset: Image.asset(
+          'assets/images/thermometer.png',
+        ),
         buildTempDetailsList: [
           BuildTempDetails(
             title: 'Feels like',
@@ -38,6 +39,9 @@ class LargeScreenWeatherWidget extends StatelessWidget {
       SizedBox(height: 48),
       InfoContainer(
         title: 'Weather details',
+        asset: Image.asset(
+          'assets/images/cloud.png',
+        ),
         buildTempDetailsList: [
           BuildTempDetails(
             title: 'Cloudiness',
@@ -58,6 +62,9 @@ class LargeScreenWeatherWidget extends StatelessWidget {
       SizedBox(height: 48),
       InfoContainer(
         title: 'Wind details',
+        asset: Image.asset(
+          'assets/images/wind.png',
+        ),
         buildTempDetailsList: [
           BuildTempDetails(
             title: 'Speed',
@@ -178,11 +185,13 @@ class BuildTempDetails extends StatelessWidget {
 class InfoContainer extends StatelessWidget {
   const InfoContainer({
     super.key,
-    required this.buildTempDetailsList,
     required this.title,
+    required this.asset,
+    required this.buildTempDetailsList,
   });
 
   final String title;
+  final Image asset;
   final List<Widget> buildTempDetailsList;
 
   @override
@@ -210,6 +219,15 @@ class InfoContainer extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: buildTempDetailsList,
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: SizedBox(
+                        height: 200,
+                        width: 200,
+                        child: asset,
+                      ),
+                    ),
                   ),
                 ],
               ),
